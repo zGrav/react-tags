@@ -27,7 +27,7 @@ var Tag = React.createClass({
         var label = this.props.tag[this.props.labelField];
         var _props = this.props;
 
-        return React.createElement(
+           return React.createElement(
             'span',
             { className: 'ReactTags__tag' },
             label,
@@ -41,4 +41,4 @@ var Tag = React.createClass({
     }
 });
 
-module.exports = flow(DragSource(ItemTypes.TAG, tagSource, dragCollect), DropTarget(ItemTypes.TAG, tagTarget, dropCollect))(Tag);
+module.exports = Tag;

@@ -180,7 +180,7 @@ var ReactTags = React.createClass({
             return React.createElement(Tag, { key: tag.id,
                 tag: tag,
                 labelField: this.props.labelField,
-                onDelete: this.handleDelete.bind(this, i));
+                onDelete: this.handleDelete.bind(this, i)});
         }).bind(this));
 
         // get the suggestions for the given query

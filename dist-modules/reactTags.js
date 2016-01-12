@@ -5,10 +5,6 @@ var ReactDOM = require('react-dom');
 var Tag = require('./Tag');
 var Suggestions = require('./Suggestions');
 
-var _require = require('react-dnd');
-
-var DragDropContext = _require.DragDropContext;
-
 var HTML5Backend = require('react-dnd-html5-backend');
 
 // Constants

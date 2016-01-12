@@ -2,10 +2,6 @@
 
 var React = require('react');
 
-var _require = require('react-dnd');
-
-var flow = require('lodash/function/flow');
-
 var ItemTypes = { TAG: 'tag' };
 
 };

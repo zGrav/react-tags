@@ -34,7 +34,6 @@ var ReactTags = React.createClass({
         inline: React.PropTypes.bool,
         handleDelete: React.PropTypes.func.isRequired,
         handleAddition: React.PropTypes.func.isRequired,
-        handleDrag: React.PropTypes.func.isRequired,
         allowDeleteFromEmptyInput: React.PropTypes.bool,
         handleInputChange: React.PropTypes.func,
         minQueryLength: React.PropTypes.number
@@ -180,31 +179,12 @@ var ReactTags = React.createClass({
             selectionMode: true
         });
     },
-    moveTag: function moveTag(id, afterId) {
-        var tags = this.props.tags;
-
-        // locate tags
-        var tag = tags.filter(function (t) {
-            return t.id === id;
-        })[0];
-        var afterTag = tags.filter(function (t) {
-            return t.id === afterId;
-        })[0];
-
-        // find their position in the array
-        var tagIndex = tags.indexOf(tag);
-        var afterTagIndex = tags.indexOf(afterTag);
-
-        // call handler with current position and after position
-        this.props.handleDrag(tag, tagIndex, afterTagIndex);
-    },
     render: function render() {
         var tagItems = this.props.tags.map((function (tag, i) {
             return React.createElement(Tag, { key: tag.id,
                 tag: tag,
                 labelField: this.props.labelField,
-                onDelete: this.handleDelete.bind(this, i),
-                moveTag: this.moveTag });
+                onDelete: this.handleDelete.bind(this, i));
         }).bind(this));
 
         // get the suggestions for the given query
@@ -244,7 +224,7 @@ var ReactTags = React.createClass({
 });
 
 module.exports = {
-    WithContext: DragDropContext(HTML5Backend)(ReactTags),
+    WithContext: ReactTags,
     WithOutContext: ReactTags,
     Keys: Keys
 };

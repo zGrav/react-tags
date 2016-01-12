@@ -4,8 +4,6 @@ var React = require('react');
 
 var ItemTypes = { TAG: 'tag' };
 
-};
-
 var Tag = React.createClass({
     displayName: 'Tag',
 

@@ -192,6 +192,7 @@ var ReactTags = React.createClass({
         var tagInput = React.createElement(
             'div',
             { className: 'ReactTags__tagInput' },
+            React.createElement('br', null),
             React.createElement('input', { ref: 'input',
                 type: 'text',
                 placeholder: placeholder,
